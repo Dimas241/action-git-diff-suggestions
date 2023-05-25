@@ -11,7 +11,9 @@
     "lint": "eslint src/**/*.ts",
     "dist": "yarn build && yarn ncc build",
     "test": "yarn jest",
-    "all": "yarn build && yarn format && yarn lint && yarn test && yarn dist"
+    "all": "yarn build && yarn format && yarn lint && yarn test && yarn dist",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -38,7 +40,8 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",
@@ -58,5 +61,6 @@
     "prettier": "^2.1.1",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
-  }
+  },
+  "snyk": true
 }
